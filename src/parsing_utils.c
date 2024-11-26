@@ -6,7 +6,7 @@
 /*   By: fcornill <fcornill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:26:16 by fcornill          #+#    #+#             */
-/*   Updated: 2024/11/25 15:41:33 by fcornill         ###   ########.fr       */
+/*   Updated: 2024/11/26 12:57:09 by fcornill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t	ft_atoi_rgb(char *str)
 	size_t	result;
 
 	result = 0;
-	while (*str == 'C' || *str == 'F' || *str == ' ' || *str == '\t')
+	while (*str == 'C' || *str == 'F' || *str == ' ')
 		str++;
 	if (*str == '-' || *str == '+')
 	{
@@ -62,7 +62,7 @@ size_t	rgb_to_hex(size_t red, size_t green, size_t blue, size_t alpha)
 
 char	*skip_space(char *s)
 {
-	while (*s && ft_strchr(" \t\r\v\f", *s))
+	while (*s && ft_strchr(" ", *s))
 		s++;
 	return (s);
 }

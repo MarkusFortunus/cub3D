@@ -6,7 +6,7 @@
 /*   By: fcornill <fcornill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:18:52 by fcornill          #+#    #+#             */
-/*   Updated: 2024/11/25 11:38:54 by fcornill         ###   ########.fr       */
+/*   Updated: 2024/11/26 13:05:46 by fcornill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ static bool	check_line_border(char *line)
 	x = 0;
 	while (line[x])
 	{
-		if (line[x] != '1' && line[x] != ' ' && line[x] != '\t'
-			&& line[x] != '\n')
+		if (line[x] != '1' && line[x] != ' ' && line[x] != '\n')
 			return (false);
 		x++;
 	}
@@ -42,14 +41,14 @@ static bool	check_invalid_space_at(t_data *data, size_t y, size_t x)
 	size_t	len;
 
 	len = ft_strlen(data->map[y]);
-	if (x > 0 && data->map[y][x - 1] == '0')
+	if (x > 0 && data->map[y][x - 1] == ' ')
 		return (false);
-	if (x < len - 1 && data->map[y][x + 1] == '0')
+	if (x < len - 1 && data->map[y][x + 1] == ' ')
 		return (false);
-	if (y > 0 && x < ft_strlen(data->map[y - 1]) && data->map[y - 1][x] == '0')
+	if (y > 0 && x < ft_strlen(data->map[y - 1]) && data->map[y - 1][x] == ' ')
 		return (false);
-	if (y < data->row - 1 && x < ft_strlen(data->map[y + 1]) && \
-data->map[y + 1][x] == '0')
+	if (y < data->row && x < ft_strlen(data->map[y + 1]) && \
+data->map[y + 1][x] == ' ')
 		return (false);
 	return (true);
 }
@@ -60,17 +59,16 @@ static bool	check_invalide_space(t_data *data)
 	size_t	x;
 	size_t	len;
 
-	y = 1;
-	while (y < data->row - 1)
+	y = 0;
+	while (y < data->row)
 	{
 		x = 0;
-		while (data->map[y][x] == ' ' || data->map[y][x] == '\t')
+		while (data->map[y][x] == ' ')
 			x++;
-		x++;
 		len = ft_strlen(data->map[y]);
-		while (x < len - 1)
+		while (x < len)
 		{
-			if (data->map[y][x] == ' ' && !check_invalid_space_at(data, y, x))
+			if (data->map[y][x] == '0' && !check_invalid_space_at(data, y, x))
 				return (false);
 			x++;
 		}

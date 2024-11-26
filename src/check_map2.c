@@ -6,7 +6,7 @@
 /*   By: fcornill <fcornill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:20:37 by fcornill          #+#    #+#             */
-/*   Updated: 2024/11/25 13:37:16 by fcornill         ###   ########.fr       */
+/*   Updated: 2024/11/26 12:56:08 by fcornill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool	check_left_border(t_data *data)
 	while (y < data->row - 1)
 	{
 		x = 0;
-		while (data->map[y][x] == ' ' || data->map[y][x] == '\t')
+		while (data->map[y][x] == ' ')
 			x++;
 		if (data->map[y][x] != '1')
 			return (false);
@@ -44,7 +44,7 @@ bool	check_right_border(t_data *data)
 		while (x < len)
 		{
 			if ((x > ft_strlen(data->map[y - 1]) - 2 || x > \
-ft_strlen(data->map[y + 1])) && data->map[y][x] == '0')
+ft_strlen(data->map[y + 1]) - 2) && data->map[y][x] == '0')
 				return (false);
 			if (x == len - 1 && (data->map[y][x - 1] != '1' && \
 data->map[y][x - 1] != ' '))

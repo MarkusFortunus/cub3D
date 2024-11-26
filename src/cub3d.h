@@ -6,7 +6,7 @@
 /*   By: fcornill <fcornill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:23:17 by fcornill          #+#    #+#             */
-/*   Updated: 2024/11/25 15:41:10 by fcornill         ###   ########.fr       */
+/*   Updated: 2024/11/26 12:54:54 by fcornill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,8 @@ bool				check_right_border(t_data *data);
 bool				check_left_border(t_data *data);
 bool				check_extension(const char *str);
 size_t				ft_atoi_rgb(char *str);
-size_t				rgb_to_hex(size_t red, size_t green, size_t blue, \
-size_t alpha);
+size_t				rgb_to_hex(size_t red, size_t green, size_t blue,
+						size_t alpha);
 bool				count_row(char **file, t_data *data);
 char				*skip_space(char *s);
 bool				check_map_content(t_data *data);

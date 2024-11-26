@@ -6,7 +6,7 @@
 /*   By: fcornill <fcornill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:28:02 by fcornill          #+#    #+#             */
-/*   Updated: 2024/11/25 11:28:08 by fcornill         ###   ########.fr       */
+/*   Updated: 2024/11/26 13:07:11 by fcornill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ void	replace_space(t_data *data)
 		x = 0;
 		while (data->map[y][x])
 		{
-			if (data->map[y][x] == ' ' || data->map[y][x] == '\t'
-				|| data->map[y][x] == '\n')
+			if (data->map[y][x] == ' ' || data->map[y][x] == '\n')
 				data->map[y][x] = '1';
 			x++;
 		}
